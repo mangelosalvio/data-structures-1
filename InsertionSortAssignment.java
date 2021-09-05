@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Name :
  * Course :
@@ -9,6 +11,20 @@ public class InsertionSortAssignment {
 
         //provide your own values
         int[] array = {1,1,1,1,1,1,1,1};
+
+        /**
+         * This will test out the method you created
+         */
+
+        System.out.println("Insertion Sort in Ascending: " );
+        insertionSort(Arrays.copyOf(array,array.length), true);
+
+        System.out.println("-".repeat(20));
+
+        System.out.println("Insertion Sort in Descending: " );
+        insertionSort(Arrays.copyOf(array,array.length), false);
+
+
 
 
         /**

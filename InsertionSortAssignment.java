@@ -53,6 +53,36 @@ public class InsertionSortAssignment {
          *  -- Use the method printArray to display the values of the array
          */
 
+        for (int i = 0 ; i < array.length - 1; i++ ) {
+            System.out.println("Iteration #" + (i+1) + ": ");
+
+            int selected_value  = array[i + 1];
+            //System.out.println("Selected value: " + selected_value);
+
+            int j;
+
+            for ( j = i  ; j >= 0 ; j-- ) {
+//                System.out.println(array[j] + " < " + selected_value);
+//                System.out.println(array[j] < selected_value);
+                if ( array[j] < selected_value && is_asc ) {
+                    break;
+                } else if ( array[j] > selected_value && !is_asc ) {
+                    break;
+                } else {
+//                    System.out.println("index: " + j);
+//                    System.out.print("After Shift: ");
+
+                    shiftRight(array,j);
+                    printArray(array);
+                }
+            }
+
+            array[j + 1] = selected_value;
+
+            printArray(array);
+        }
+
+        System.out.println();
 
 
         /**
@@ -74,7 +104,7 @@ public class InsertionSortAssignment {
      */
     //use this method to shift to the right
     public static void shiftRight(int[] array, int i){
-        if ( i + 1 < array.length - 1 ) {
+        if ( i + 1 <= array.length - 1 ) {
             array[i + 1] = array[i];
         }
     }

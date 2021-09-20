@@ -89,7 +89,7 @@ public class ShellSort {
 //                    System.out.println("index: " + j);
 //                    System.out.print("After Shift: ");
 
-                        shiftRight(array,j,gap);
+                        shiftRight(array,gap);
                         printArray(array);
                     }
                 }

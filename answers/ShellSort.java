@@ -52,13 +52,13 @@ public class ShellSort {
      * @param i - index used to shift value to the right
      */
     //use this method to shift to the right
-    public static void shiftRight(int[] array, int i){
-        if ( i + 1 < array.length - 1 ) {
-            array[i + 1] = array[i];
+    public static void shiftRight(int[] array, int i, int gap){
+        if ( i + gap <= array.length - 1 ) {
+            array[i + gap] = array[i];
         }
     }
-  
-   public static void shellSort(int[] array, boolean is_asc) {
+
+    public static void shellSort(int[] array, boolean is_asc) {
         /**
          * Program starts here
          * Requirements:
@@ -74,13 +74,13 @@ public class ShellSort {
                 System.out.println("Iteration #" + (i+1) + ": ");
 
                 int selected_value  = array[i + gap];
-                //System.out.println("Selected value: " + selected_value);
+                System.out.println("Selected value: " + selected_value);
 
                 int j;
 
                 for ( j = i  ; j >= 0 ; j= j - gap ) {
-//                System.out.println(array[j] + " < " + selected_value);
-//                System.out.println(array[j] < selected_value);
+                System.out.println(array[j] + " < " + selected_value);
+                System.out.println(array[j] < selected_value);
                     if ( array[j] < selected_value && is_asc ) {
                         break;
                     } else if ( array[j] > selected_value && !is_asc ) {
@@ -89,7 +89,7 @@ public class ShellSort {
 //                    System.out.println("index: " + j);
 //                    System.out.print("After Shift: ");
 
-                        shiftRight(array,gap);
+                        shiftRight(array,j,gap);
                         printArray(array);
                     }
                 }

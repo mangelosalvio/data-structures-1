@@ -1,11 +1,19 @@
-package com.linkedlist.singlylinkedlist;
+package com.singlylinkedlist;
 
 public class EmployeeNode {
     private Employee employee;
     private EmployeeNode next;
+    private EmployeeNode previous;
 
+    public EmployeeNode getPrevious() {
+        return previous;
+    }
 
-    public EmployeeNode(Employee employee) {
+    public void setPrevious(EmployeeNode previous) {
+        this.previous = previous;
+    }
+
+    public EmployeeNode(Employee employee){
         this.employee = employee;
     }
 
@@ -13,12 +21,12 @@ public class EmployeeNode {
         return employee;
     }
 
-    public EmployeeNode getNext() {
-        return next;
-    }
-
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public EmployeeNode getNext() {
+        return next;
     }
 
     public void setNext(EmployeeNode next) {
